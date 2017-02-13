@@ -15,9 +15,9 @@ var attempted = '';
 function reset() {
     person = [];
     pick = names[Math.floor(Math.random() * names.length)];
-    pick.split("");
+    //pick.split('');
     for (var i = 0; i < pick.length; i++) {
-        if (pick[i] == " " || pick[i] === '.' || pick[i] === '\'') {
+        if (pick[i] == ' ' || pick[i] === '.' || pick[i] === '\'') {
             person[i] = pick[i];
         } else {
             person.push('*');
@@ -26,12 +26,12 @@ function reset() {
         attempted = '';
     }
     console.log(pick);
-    wright()
+    wright();
 }
 
 //user guesses
 document.onkeyup = function(event) {
-    if (pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || attempted.toLowerCase().indexOf(event.key.toLowerCase()) == -1) {
+    if (pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || attempted.toLowerCase().indexOf(event.key.toLowerCase()) !== -1) {
         console.log(pick.indexOf(event.key));
         //wrong key
         tries = tries - 1;
@@ -45,7 +45,7 @@ document.onkeyup = function(event) {
         }
     }
     attempted = attempted + ' ' + (event.key);
-    wright()
+    wright();
 }
 
 function personBio(bio) {
@@ -53,14 +53,14 @@ function personBio(bio) {
 }
 
 function wright() {
-    if (tries == 0) {
+    if (tries === 0) {
         alert('Attempts Exhausted: Access Denied' + String.fromCharCode(10) + 'Score:  ' + score);
         score = 0;
         reset();
     }
     if (person.indexOf('*') === -1) {
         alert('Access Granted' + String.fromCharCode(10) + 'Score:  ' + score);
-        personBio(pick)
+        personBio(pick);
         reset();
     }
     displayName.innerText = person.join('');
