@@ -14,10 +14,14 @@ var attempted = '';
 
 function reset() {
     person = [];
-    pick = names[Math.floor(Math.random() * names.length - 1)];
-    //pick.split("");
+    pick = names[Math.floor(Math.random() * names.length)];
+    pick.split("");
     for (var i = 0; i < pick.length; i++) {
-        person.push(' _');
+        if (pick[i] == " " || pick[i] === '.' || pick[i] === '\'') {
+            person[i] = pick[i];
+        } else {
+            person.push('*');
+        }
         tries = 10;
         attempted = '';
     }
@@ -27,7 +31,7 @@ function reset() {
 
 //user guesses
 document.onkeyup = function(event) {
-    if (pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || attempted.toLowerCase().indexOf(event.key.toLowerCase()) !== -1 && event.key !== ' ') {
+    if (pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || attempted.toLowerCase().indexOf(event.key.toLowerCase()) == -1) {
         console.log(pick.indexOf(event.key));
         //wrong key
         tries = tries - 1;
@@ -51,9 +55,10 @@ function personBio(bio) {
 function wright() {
     if (tries == 0) {
         alert('Attempts Exhausted: Access Denied' + String.fromCharCode(10) + 'Score:  ' + score);
+        score = 0;
         reset();
     }
-    if (person.indexOf(' _') === -1) {
+    if (person.indexOf('*') === -1) {
         alert('Access Granted' + String.fromCharCode(10) + 'Score:  ' + score);
         personBio(pick)
         reset();
