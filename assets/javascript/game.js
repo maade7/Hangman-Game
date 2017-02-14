@@ -1,4 +1,4 @@
-var names = ['James T. Kirk', 'Spock', 'Leonard McCoy', 'Montgomery Scott', 'Uhura', 'Hikaru Sulu', 'Pavel Chekov', 'Christine Chapel', 'Janice Rand', 'Jean-Luc Picard', 'William T. Riker', 'Deanna Troi', 'Data', 'Geordi La Forge', 'Worf', 'Beverly Crusher', 'Wesley Crusher', 'Tasha Yar', 'Benjamin Sisko', 'Kira Nerys', 'Odo', 'Jadzia Dax', 'Ezri Dax', 'Julian Bashir', 'Miles O\'Brien', 'Quark', 'Kathryn Janeway', 'Chakotay', 'Tuvok', 'B\'Elanna Torres', 'Tom Paris', 'Harry Kim', 'The Doctor', 'Neelix', 'Kes', 'Seven of Nine', 'Jonathan Archer', 'T\'Pol', 'Trip Tucker', 'Phlox', 'Hoshi Sato', 'Malcolm Reed', 'Travis Mayweather', 'Porthos'];
+var names = ['James T. Kirk', 'Spock', 'Leonard McCoy', 'Montgomery Scott', 'Uhura', 'Hikaru Sulu', 'Pavel Chekov', 'Christine Chapel', 'Janice Rand', 'Jean-Luc Picard', 'William T. Riker', 'Data', 'Deanna Troi', 'Geordi La Forge', 'Worf', 'Beverly Crusher', 'Wesley Crusher', 'Tasha Yar', 'Benjamin Sisko', 'Kira Nerys', 'Odo', 'Jadzia Dax', 'Ezri Dax', 'Julian Bashir', 'Miles O\'Brien', 'Quark', 'Kathryn Janeway', 'Chakotay', 'Tuvok', 'B\'Elanna Torres', 'Tom Paris', 'Harry Kim', 'The Doctor', 'Neelix', 'Kes', 'Seven of Nine', 'Jonathan Archer', 'T\'Pol', 'Trip Tucker', 'Phlox', 'Hoshi Sato', 'Malcolm Reed', 'Travis Mayweather', 'Porthos'];
 var person = [];
 var pick = '';
 var displayName = document.getElementById("name");
@@ -10,9 +10,19 @@ var obj = document.getElementById('characters');
 var tries = 10;
 var score = 0;
 var attempted = '';
-var access = 'ACCESS DENIED';
+var access = 'ENTER ACCESS CODE';
+var denied = new Audio('./assets/audio/002.wav');
+var accepted = new Audio('./assets/audio/securityauthorisationaccepted_clean.mp3');
+var command = new Audio('./assets/audio/pleaseinputcommandcodes_ep.mp3');
+var correct = new Audio('./assets/audio/keyok2.mp3');
+var incorect = new Audio('./assets/audio/denybeep1.mp3');
+displayAccess.style.color = '#f90';
 
-
+document.onkeydown = function(e) {
+    if (e.keyCode == 32 && e.target == document.body) {
+        e.preventDefault();
+    }
+}
 
 function reset() {
     person = [];
@@ -36,12 +46,14 @@ document.onkeyup = function(event) {
     if (pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || attempted.toLowerCase().indexOf(event.key.toLowerCase()) !== -1) {
         //wrong key
         tries = tries - 1;
+        incorect.play();
     } else {
         //right key
         for (var i = 0; i < pick.length; i++) {
             if (pick[i].toLowerCase() === event.key.toLowerCase()) {
                 person[i] = pick[i];
                 score++;
+                correct.play();
             }
         }
     }
@@ -51,20 +63,24 @@ document.onkeyup = function(event) {
 
 function move(y) {
     obj.style.position = 'relative';
+    obj.style.webkitTransitionDuration = "1s";
     obj.style.top = ((y * -50) + 'rem');
-    console.log((y * -50) + 'rem');
 }
 
 
 function wright() {
     if (tries === 0) {
-        alert('Attempts Exhausted: Access Denied' + String.fromCharCode(10) + 'Score:  ' + score);
         score = 0;
+        displayAccess.style.color = '#c66';
         access = 'ACCESS DENIED';
+        denied.play();
+        move(names.length);
         reset();
     }
     if (person.indexOf('*') === -1) {
+        displayAccess.style.color = '#99f';
         access = 'ACCESS GRANTED';
+        accepted.play();
         move(names.indexOf(pick));
         reset();
     }
@@ -75,5 +91,7 @@ function wright() {
     displayAccess.innerHTML = access;
 }
 
+
 console.log(names);
 reset();
+command.play();

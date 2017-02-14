@@ -3,7 +3,7 @@ html, body {
 }
 
 .highlight {
-    color: #ff9900;
+    color: #f90;
 }
 
 .floatLeft {
@@ -18,26 +18,60 @@ html, body {
     overflow: hidden;
 }
 
+.character {
+    height: 50rem;
+    overflow: hidden;
+    font-size: 2rem;
+    color: #99c;
+}
+
 #characters {
     position: relative;
     height: 50rem;
     top: -2200rem;
 }
 
-.character {
-    height: 50rem;
+h2 {
+    margin-bottom: .5rem;
+    color: white;
 }
 
-.officer {
-    margin-top: .2rem;
+.padTop {
+    margin-top: .4rem;
+}
+
+.padLeft {
+    margin-left: 5rem;
 }
 
 .access {
     width: inherit;
 }
 
-.anim {
-    width: inherit;
-    height: inherit;
+i {
+    color: #c9c;
+}
+
+.animT {
+    width: auto;
+    height: 320px!important;
     background-image: url(../images/mapbuttons.gif);
+}
+
+.anim {
+    width: auto;
+    background-image: url(../images/mapbuttons.gif);
+}
+
+.animM {
+    width: auto;
+    height: 150px!important;
+    background-image: url(../images/mapbuttons.gif);
+}
+
+.pic {
+    margin: .3rem 1rem 0 0;
+    width: 160px;
+    float: left;
+    border: .2rem solid #c66;
 }
