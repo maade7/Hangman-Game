@@ -1,0 +1,43 @@
+html, body {
+    background: black
+}
+
+.highlight {
+    color: #ff9900;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.crop {
+    overflow: hidden;
+}
+
+#characters {
+    position: relative;
+    height: 50rem;
+    top: -2200rem;
+}
+
+.character {
+    height: 50rem;
+}
+
+.officer {
+    margin-top: .2rem;
+}
+
+.access {
+    width: inherit;
+}
+
+.anim {
+    width: inherit;
+    height: inherit;
+    background-image: url(../images/mapbuttons.gif);
+}

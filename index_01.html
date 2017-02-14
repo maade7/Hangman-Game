@@ -1,0 +1,891 @@
+<!-- Comment -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman-Game</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+</head>
+
+
+<body>
+    <div class="game">
+
+        <h1><span id="name"><strong>0</strong></span></h1>
+        <h2>Attempts Remaining: <span id="tries"><strong>10</strong></span></h2>
+        <h2>Score: <span id="score"><strong>0</strong></span></h2>
+        <h2>Letters Attempted: <span id="attempted"><strong></strong></span></h2>
+        <h3><span id="bio"><strong></strong></span></h3>
+    </div>
+
+    <div class="characters">
+        <h2><a name="kirk"></a>James
+T. Kirk</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/kirk3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kirk3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/kirk2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kirk2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/kirk1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kirk1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<span class="highlight"><br>
+Full name:</span> James Tiberius Kirk<span class="highlight"><br>
+Last rank:</span> Captain, previously Rear Admiral<br>
+            <span class="highlight">Date of birth:</span> 2233<span class="highlight"><br>
+Place of origin:</span> Iowa, Earth<span class="highlight"><br>
+Date of death:</span> 2293 (missing, presumed dead), 2371 (actual death)<span class="highlight"><br>
+Place of origin:</span> Iowa, North America, Earth<br>
+            <span class="highlight">Brother:</span> George Samuel Kirk (deceased)<br>
+            <span class="highlight">Son:</span> Dr. David Marcus (deceased)<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by William Shatner</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="spock"></a>Spock</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/spock3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/spock3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/spock2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/spock2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/spock1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/spock1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human/Vulcan<span class="highlight"><br>
+Rank:
+</span> Captain
+            <br>
+            <span class="highlight">
+Date of birth:</span> 2230<br>
+            <span class="highlight">
+Place of origin:</span> ShirKahr, Vulcan<br>
+            <span class="highlight">Parents:</span> Sarek, Amanda Grayson<br>
+            <span class="highlight">Grandfather:</span> Skon<br>
+            <span class="highlight">Great-grandfather:</span> Solkar<br>
+            <span class="highlight">Brother:</span> Sybok (half-brother, deceased)<br>
+            <span class="highlight">
+Marital status:</span> single*<br>
+            <i>
+Played by Leonard Nimoy (1931-2015)</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="mccoy"></a>Leonard
+McCoy</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/mccoy3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/mccoy3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/mccoy2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/mccoy2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/mccoy1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/mccoy1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<br>
+            <span class="highlight">Full name:</span> Dr. Leonard H. McCoy<br>
+            <span class="highlight">Rank:</span> Commander<br>
+            <span class="highlight">
+Place of origin:</span> Mississippi, North America, Earth<br>
+            <span class="highlight">Father:</span> David McCoy<span class="highlight"><br>
+Marital status:</span> single*<br>
+            <i>
+Played by DeForest Kelley (1920-1999)</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="scott"></a>Montgomery
+Scott</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/scott3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/scott3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/scott2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/scott2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/scott1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/scott1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<span class="highlight"><br>
+Rank:</span> Captain<br>
+            <span class="highlight">
+Place of origin:</span> Scotland, Earth<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by James Doohan (1920-2005)</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="uhura"></a>Uhura</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/uhura3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/uhura3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/uhura2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/uhura2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/uhura1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/uhura1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> female human<span class="highlight"><br>
+Full name:</span> unknown*<span class="highlight"><br>
+Rank:</span> Commander<span class="highlight"><br>
+Date of birth:</span> 2239<br>
+            <span class="highlight">
+Place of origin:</span> Africa, Earth<br>
+            <span class="highlight">
+Marital status:</span> unknown<br>
+            <i>
+Played by Nichelle Nichols</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="sulu"></a>Hikaru
+Sulu</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/sulu3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sulu3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/sulu2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sulu2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/sulu1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sulu1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<span class="highlight"><br>
+Rank:</span> Captain*<span class="highlight"><br>
+Date of birth:</span> 2237<span class="highlight"><br>
+Place of origin:</span> San Francisco, North America, Earth**<br>
+            <span class="highlight">Marital status:</span> married or previously married
+            <br>
+            <span class="highlight">Children:</span> Demora Sulu<br>
+            <i>
+Played by George Takei</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="chekov"></a>Pavel
+Chekov</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chekov3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chekov3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chekov2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chekov2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chekov1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chekov1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<span class="highlight"><br>
+Full name:</span> Pavel Andreievich Chekov<span class="highlight"><br>
+Rank:</span> Commander<br>
+            <span class="highlight">
+Date of birth:</span> 2245<br>
+            <span class="highlight">Father:</span> Andreiy Chekov <i> (Russian second
+names traditionally denote the father)</i><span class="highlight"><br>
+Siblings:</span> none<br>
+            <span class="highlight">
+Marital status:</span> unknown<br>
+            <i>
+Played by Walter Koenig</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="chapel"></a>Christine
+Chapel</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chapel3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chapel3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chapel2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chapel2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chapel1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chapel1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> female human<span class="highlight"><br>
+Rank:</span> Commander<br>
+            <span class="highlight">
+Marital status:</span> unknown<br>
+            <i>
+Played by Majel Barrett (1932-2008)</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="rand"></a>Janice
+Rand</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/rand3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/rand3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/rand2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/rand2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/rand1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/rand1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> female human<span class="highlight"><br>
+Rank:</span> Lieutenant Commander*<br>
+            <span class="highlight">
+Marital status:</span> unknown<br>
+            <i>
+Played by Grace Lee Whitney (1930-2015)</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="picard"></a>Jean-Luc
+Picard</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/picard3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/picard3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/picard2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/picard2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/picard1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/picard1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Species: </span> male human<br>
+            <span class="highlight">Rank:</span> Captain<br>
+            <span class="highlight">Date of birth:</span> July 13, 2305<br>
+            <span class="highlight">Place of birth:</span> La Barre, France, Earth<br>
+            <span class="highlight">Parents:</span> Maurice and Yvette Gessard Picard (both deceased)<br>
+            <span class="highlight">Brother:</span> Robert Picard (deceased)<br>
+            <span class="highlight">Marital status:</span> single<br>
+            <i>Played by Patrick Stewart</i></p>
+
+        <h2><a name="riker"></a>William T. Riker</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/riker3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/riker3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/riker2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/riker2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/riker1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/riker1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Species: </span> male human<br>
+            <span class="highlight">Full name:</span> William Thomas Riker<br>
+            <span class="highlight">Rank:</span> Captain<br>
+            <span class="highlight">Date of birth:</span> 2335<br>
+            <span class="highlight">Place of birth:</span> Valdez, Alaska, Earth<br>
+            <span class="highlight">Father:</span> Kyle Riker<br>
+            <span class="highlight">Twin brother:</span> Thomas Riker (technically a duplicate of Will Riker due to a transporter malfunction)<br>
+            <span class="highlight">Marital status:</span> married with Deanna Troi<br>
+            <i>Played by Jonathan Frakes</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="data"></a>Data</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/data3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/data3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/data2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/data2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/data1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/data1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Species: </span> male android of the Soong type<br>
+            <span class="highlight">Last rank:</span> Lieutenant Commander<br>
+            <span class="highlight">Date of activation:</span> February 2, 2338<br>
+            <span class="highlight">Place of creation:</span> Omicron Theta<br>
+            <span class="highlight">Date of death:</span> 2379<br>
+            <span class="highlight">Place of death:</span> Bassen Rift, aboard the Scimitar<br>
+            <span class="highlight">Creator:</span> Dr. Noonien Soong*<br>
+            <span class="highlight">Siblings:</span> Lore (deconstructed), B-4<br>
+            <span class="highlight">Daughter:</span> Lal (deceased)<br>
+            <i>Played by Brent Spiner</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="troi"></a>Deanna
+Troi</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/troi3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/troi3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/troi2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/troi2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/troi1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/troi1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Species: </span> female human/Betazoid<br>
+            <span class="highlight">Rank:</span> Commander<br>
+            <span class="highlight">Date of birth:</span> March 29, 2336<br>
+            <span class="highlight">Place of birth:</span> Betazed<br>
+            <span class="highlight">Parents:</span> Ian Andrew Troi (deceased) and Lwaxana Troi<br>
+            <span class="highlight">Sister:</span> Kestra Troi (deceased)<br>
+            <span class="highlight">Son:</span> Ian Andrew Troi (&quot;deceased&quot;, actually a non-corporeal lifeform)<br>
+            <span class="highlight">Marital status:</span> married with William T. Riker, previously engaged with Wyatt Miller<br>
+            <i>Played by Marina Sirtis </i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="laforge"></a>Geordi
+La Forge</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/laforge3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/laforge3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/laforge2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/laforge2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/laforge1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/laforge1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Species:</span> male human<br>
+            <span class="highlight">Rank:</span> Lieutenant Commander<br>
+            <span class="highlight">Date of birth:</span> 2335<br>
+            <span class="highlight">Place of birth:</span> Mogadishu, Somalia, African Confederation, Earth<br>
+            <span class="highlight">Parents:</span> Edward M. La Forge and Silva La Forge (missing, presumed dead)<br>
+            <span class="highlight">Sister:</span> Ariana La Forge<br>
+            <span class="highlight">Marital status:</span> unknown<br>
+            <i>Played by LeVar Burton </i>
+        </p>
+
+
+        <p>&nbsp;</p>
+
+        <h2><a name="worf"></a>Worf</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/worf3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/worf3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/worf2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/worf2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/worf1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/worf1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Species: </span> male Klingon<br>
+            <span class="highlight">Rank:</span> Lieutenant Commander<br>
+            <span class="highlight">Date of birth:</span> 2340<br>
+            <span class="highlight">Place of birth:</span> Qo'noS<br>
+            <span class="highlight">Father:</span> Mogh (deceased)<br>
+            <span class="highlight">Brother:</span> Kurn<br>
+            <span class="highlight">Adoptive parents:</span> Sergey and Helena Rozhenko<br>
+            <span class="highlight">Adoptive brother:</span> Nikolai Rozhenko<br>
+            <span class="highlight">Son:</span> Alexander Rozhenko (born 2366)<br>
+            <span class="highlight">Marital status:</span> widowed from Jadzia Dax<br>
+            <i>Played by Michael Dorn </i>
+        </p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="beverly"></a>Beverly Crusher</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/crusher3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/crusher3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/crusher2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/crusher2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/crusher1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/crusher1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Full name:</span> Beverly Cheryl Crusher<br>
+            <span class="highlight">Species:</span> female human<br>
+            <span class="highlight">Rank:</span> Commander<br>
+            <span class="highlight">Date of birth:</span> October 13, 2324<br>
+            <span class="highlight">Place of birth:</span> Copernicus City, Luna<br>
+            <span class="highlight">Grandmother:</span> Felisa Howard (deceased)<br>
+            <span class="highlight">Parents:</span> Paul and Isabel Howard (both deceased)<br>
+            <span class="highlight">Son:</span> Wesley Crusher<br>
+            <span class="highlight">Marital status:</span> widowed from Jack Crusher (2354)<br>
+            <i>Played by Gates McFadden </i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="wesley"></a>Wesley Crusher</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/wesley3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/wesley3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/wesley2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/wesley2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/wesley1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/wesley1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Species:</span> male human<br>
+            <span class="highlight">Rank:</span> none*<br>
+            <span class="highlight">Date of birth:</span> 2349<br>
+            <span class="highlight">Parents:</span> Jack Crusher (deceased), Beverly Crusher<br>
+            <span class="highlight">Marital status:</span> unknown<br>
+            <i>Played by Wil Wheaton </i>
+        </p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="tasha"></a>Tasha Yar</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/yar3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/yar3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/yar2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/yar2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/yar1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/yar1-t.jpg" align="right" width="160" height="180"></a>
+            <span class="highlight">Species:</span> female human<br>
+            <span class="highlight">Full name:</span> Natasha Yar<br>
+            <span class="highlight">Last rank:</span> Lieutenant<br>
+            <span class="highlight">Place of birth:</span> Turkana IV<br>
+            <span class="highlight">Date of death:</span> 2364<br>
+            <span class="highlight">Place of death:</span> Vagra II<br>
+            <span class="highlight">Sister:</span> Ishara Yar<br>
+            <span class="highlight">Last marital status:</span> single<br>
+            <i>Played by Denise Crosby </i>
+        </p>
+
+
+        <p>&nbsp;</p>
+
+        <h2><a name="sisko"></a>Benjamin
+Sisko</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/sisko3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sisko3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/sisko2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sisko2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/sisko1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sisko1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<span class="highlight"><br>
+Full name:</span> Benjamin Lafayette Sisko<span class="highlight"><br>
+Rank:</span> Captain<br>
+            <span class="highlight">Date of birth:</span> 2332<span class="highlight"><br>
+Place of birth:</span> New Orleans, Lousiana, Earth<br>
+            <span class="highlight">Place of disappearance:</span> Fire Caves, Bajor<br>
+            <span class="highlight">Current whereabouts:</span> uncertain<br>
+            <span class="highlight">Parents:</span> Joseph Sisko and Sarah Sisko (a Bajoran Prophet)<br>
+            <span class="highlight">Son:</span> Jake Sisko<br>
+            <span class="highlight">Sister:</span> Judith Sisko<br>
+            <span class="highlight">
+Marital status:</span> married with Kasidy Yates (2375), widowed from Jennifer Sisko (2367)<br>
+            <i>
+Played by Avery Brooks</i></p>
+
+
+        <p>&nbsp;</p>
+
+        <h2><a name="kira"></a>Kira
+Nerys</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/kira3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kira3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/kira2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kira2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/kira1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kira1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> female Bajoran<span class="highlight"><br>
+Rank:</span> Colonel<br>
+            <span class="highlight">Date of birth:</span> 2343<span class="highlight"><br>
+Place of birth:</span> Dakhur Province, Bajor<br>
+            <span class="highlight">Parents:</span> Kira Taban and Kira Meru<br>
+            <span class="highlight">Siblings:</span> two brothers, Kira Pohl and Kira Reon<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by Nana Visitor </i></p>
+
+
+        <p>&nbsp;</p>
+
+        <h2><a name="odo"></a>Odo</h2>
+
+        <p>
+
+            <a href="http://www.ex-astris-scientia.org/database/cast/odo3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/odo3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/odo2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/odo2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/odo1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/odo1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male Changeling or Founder<br>
+            <span class="highlight">Date of retrieval:</span> 2337<span class="highlight"><br>
+Place of retrieval:</span> Denorios Belt, Bajor system<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by René Auberjonois </i></p>
+
+
+        <p>&nbsp;</p>
+
+        <h2><a name="jadzia"></a>Jadzia
+Dax</h2>
+
+        <p>
+
+            <a href="http://www.ex-astris-scientia.org/database/cast/dax3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/dax3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/dax2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/dax2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/dax1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/dax1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> female <a href="../inconsistencies/trills.htm">joined Trill</a><br>
+            <span class="highlight">Last rank:</span> Lieutenant commander<br>
+            <span class="highlight">Father:</span> Kela<br>
+            <span class="highlight">Date of joining:</span> 2367<br>
+            <span class="highlight">Date of death:</span> 2374<span class="highlight"><br>
+Place of Death:</span> Deep Space 9<span class="highlight"><br>
+List of hosts:</span> Lela Dax, Tobin Dax, Emony Dax, Audrid Dax, Torias Dax, Joran Dax (temp.), Curzon Dax, Jadzia Dax, Verad (temp.), Ezri Dax (current)
+            <br>
+            <span class="highlight">Last marital status:</span> married with Worf<br>
+            <i>
+Played by Terry Farrell </i></p>
+
+
+        <p>&nbsp;</p>
+
+        <h2><a name="ezri"></a>Ezri
+Dax</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/ezri3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/ezri3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/ezri2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/ezri2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/ezri1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/ezri1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> female <a href="../inconsistencies/trills.htm">joined Trill</a><br>
+            <span class="highlight">Rank:</span> Lieutenant junior grade<br>
+            <span class="highlight">Place of origin:</span> New Sydney colony<br>
+            <span class="highlight">Birth name:</span> Ezri Tigan<br>
+            <span class="highlight">Mother:</span> Yanas Tigan<br>
+            <span class="highlight">Siblings:</span> Janel Tigan, Norvo Tigan<br>
+            <span class="highlight">Date of joining:</span> 2374<span class="highlight"><br>
+List of hosts:</span> Lela Dax, Tobin Dax, Emony Dax, Audrid Dax, Torias Dax, Joran Dax (temp.), Curzon Dax, Jadzia Dax, Verad (temp.), Ezri Dax (current)
+            <br>
+            <span class="highlight">Marital status:</span> single<br>
+            <i>
+Played by Nicole deBoer </i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="bashir"></a>Julian
+Bashir</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/bashir3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/bashir3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/bashir2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/bashir2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/bashir1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/bashir1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<span class="highlight"><br>
+Full name:</span> Dr. Julian Subatoi Bashir<span class="highlight"><br>
+Rank:</span> Lieutenant<br>
+            <span class="highlight">Date of birth:</span> 2341<br>
+            <span class="highlight">Parents:</span> Richard and Amsha Bashir<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by Alexander Siddig* </i>
+        </p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="obrien"></a>Miles
+O'Brien</h2>
+
+        <p>
+
+            <a href="http://www.ex-astris-scientia.org/database/cast/obrien3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/obrien3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/obrien2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/obrien2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/obrien1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/obrien1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<span class="highlight"><br>
+Full name:</span> Miles Edward O'Brien<span class="highlight"><br>
+Rank:</span> uncertain**<span class="highlight"><br>
+Place of origin:</span> Dublin, Ireland, Earth<br>
+            <span class="highlight">Father:</span> Michael O'Brien<br>
+            <span class="highlight">Siblings:</span> two brothers<br>
+            <span class="highlight">Children:</span> Molly O'Brien (born 2368), Kirayoshi O'Brien (born 2373)<br>
+            <span class="highlight">
+Marital status:</span> married with Keiko O'Brien (née Ishikawa)<br>
+            <i>
+Played by Colm Meaney </i>
+        </p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="worf"></a>Worf</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/worf-ds9-3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/worf-ds9-3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/worf-ds9-2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/worf-ds9-2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/worf-ds9-1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/worf-ds9-1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male Klingon<span class="highlight"><br>
+Rank:</span> Lieutenant Commander<br>
+            <span class="highlight">Date of birth:</span> 2340<span class="highlight"><br>
+Place of birth:</span> Qo'noS<br>
+            <span class="highlight">Father:</span> Mogh (deceased)<br>
+            <span class="highlight">Brother:</span> Kurn
+            <br>
+            <span class="highlight">Adoptive parents:</span> Sergey and Helena Rozhenko<br>
+            <span class="highlight">Adoptive brother:</span> Nikolai Rozhenko<br>
+            <span class="highlight">Son:</span> Alexander<br>
+            <span class="highlight">
+Marital status:</span> widowed from Jadzia Dax<br>
+            <i>
+Played by Michael Dorn </i>
+        </p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="quark"></a>Quark</h2>
+
+        <p>
+
+            <a href="http://www.ex-astris-scientia.org/database/cast/quark3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/quark3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/quark2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/quark2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/quark1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/quark1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male Ferengi<br>
+            <span class="highlight">Parents:</span> Keldar and Ishka<br>
+            <span class="highlight">Brother:</span> Rom
+            <br>
+            <span class="highlight">
+Marital status:</span> divorced from Grilka<br>
+            <i>
+Played by Armin Shimerman </i>
+        </p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="janeway"></a>Kathryn Janeway</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/janeway3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/janeway3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/janeway2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/janeway2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/janeway1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/janeway1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> female human<span class="highlight"><br>
+Rank:</span> Captain<br>
+            <span class="highlight">Birthday:</span> May 20<span class="highlight"><br>
+Place of origin:</span> Indiana, North America, Earth<br>
+            <span class="highlight">
+Father:</span> Admiral Janeway (deceased)<br>
+            <span class="highlight">
+Sister:</span> Phoebe<br>
+            <span class="highlight">
+Marital status:</span> single, previously engaged<br>
+            <i>
+Played by Kate Mulgrew</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="chakotay"></a>Chakotay</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chakotay3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chakotay3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chakotay2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chakotay2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/chakotay1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/chakotay1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male human<span class="highlight"><br>
+Rank:
+</span> Lieutenant Commander, provisional<br>
+            <span class="highlight">
+Date of birth:</span> 2329<br>
+            <span class="highlight">
+Place of origin:</span> a colony near the Cardassian border*<br>
+            <span class="highlight">
+Father:</span> Kolopak (deceased)<br>
+            <span class="highlight">Siblings:</span> one sister<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by Robert Beltran</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="tuvok"></a>Tuvok</h2>
+
+        <p>
+            <a href="http://www.ex-astris-scientia.org/database/cast/tuvok3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tuvok3-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/tuvok2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tuvok2-t.jpg" align="right" width="160" height="180"></a>
+            <a href="http://www.ex-astris-scientia.org/database/cast/tuvok1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tuvok1-t.jpg" align="right" width="160" height="180"></a><span class="highlight">Species:
+</span> male Vulcan<span class="highlight"><br>
+Rank:
+</span> Lieutenant Commander*<br>
+            <span class="highlight">
+Date of birth:</span> <a href="../inconsistencies/biographies1.htm#other">  2264</a><br>
+            <span class="highlight">
+Place of birth:</span> Vulcanis Lunar Colony<br>
+            <span class="highlight">
+Marital status:</span> married to T'Pel since 2304<br>
+            <span class="highlight">Children:</span> three sons, one daughter<br>
+            <span class="highlight">Grandchildren:</span> one<br>
+            <i>
+Played by Tim Russ</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="belanna"></a>B'Elanna
+Torres</h2>
+
+        <p><span class="highlight">
+<a href="http://www.ex-astris-scientia.org/database/cast/torres3.jpg">
+<img border="0" src="http://www.ex-astris-scientia.org/database/cast/torres3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/torres2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/torres2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/torres1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/torres1-t.jpg" align="right" width="160" height="180"></a>Species:
+</span> female Klingon/human<span class="highlight"><br>
+Full name:
+</span> B'Elanna L. Torres<span class="highlight"><br>
+Rank:</span> Lieutenant Jr. Grade, provisional<br>
+            <span class="highlight">
+Place of birth:</span> Kessik IV<br>
+            <span class="highlight">Parents:</span> John Torres, Miral<br>
+            <span class="highlight">
+Marital status:</span> married to Tom Paris since stardate 54089 (2377)<br>
+            <span class="highlight">Children:</span> one daughter, Miral (born 2378)<br>
+            <i>
+Played by Roxann Dawson</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="paris"></a>Tom
+Paris</h2>
+
+        <p><span class="highlight">
+<a href="http://www.ex-astris-scientia.org/database/cast/paris3.jpg">
+<img border="0" src="http://www.ex-astris-scientia.org/database/cast/paris3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/paris2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/paris2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/paris1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/paris1-t.jpg" align="right" width="160" height="180"></a>Species:
+</span> male human<span class="highlight"><br>
+Full name:
+</span> Thomas Eugene Paris<span class="highlight"><br>
+Rank:</span> Lieutenant Jr. Grade*<br>
+            <span class="highlight">Father:</span> Admiral Owen Paris<br>
+            <span class="highlight">
+Marital status:</span> married to B'Elanna Torres since stardate 54089 (2377)
+            <br>
+            <span class="highlight">Children:</span> one daughter, Miral (born 2378)<br>
+            <i>
+Played by Robert Duncan McNeill**</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="kim"></a>Harry
+Kim</h2>
+
+        <p><span class="highlight">
+<a href="http://www.ex-astris-scientia.org/database/cast/kim3.jpg">
+<img border="0" src="http://www.ex-astris-scientia.org/database/cast/kim3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/kim2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kim2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/kim1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kim1-t.jpg" align="right" width="160" height="180"></a>Species:
+</span> male human<span class="highlight"><br>
+Rank:</span> Ensign<br>
+            <span class="highlight">
+Date of birth:</span> 2349<br>
+            <span class="highlight">
+Place of birth:</span> South Carolina, North America, Earth<br>
+            <span class="highlight">Parents:</span> Mary and John Kim<br>
+            <span class="highlight">Siblings:</span> none<br>
+            <span class="highlight">
+Marital status:</span> single, previously engaged to Libby<br>
+            <i>
+Played by Garrett Wang</i></p>
+
+        <p>&nbsp;</p>
+        <h2><a name="doctor"></a>The
+Doctor</h2>
+
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/doctor3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/doctor3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/doctor2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/doctor2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/doctor1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/doctor1-t.jpg" align="right" width="160" height="180"></a>Species:
+</span> Emergency Medical Hologram Mark I<span class="highlight"><br>
+Full name:
+</span> none<span class="highlight"><br>
+Rank:</span> none<br>
+            <span class="highlight">
+Date of birth:</span> first activated on stardate 48308.2 (2371)<br>
+            <span class="highlight">
+Place of birth:</span> programmed on Jupiter station<br>
+            <span class="highlight">Parents:</span> programmed by Dr. Lewis Zimmerman<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by Robert Picardo</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="neelix"></a>Neelix</h2>
+
+        <p><span class="highlight">
+<a href="http://www.ex-astris-scientia.org/database/cast/neelix3.jpg">
+<img border="0" src="http://www.ex-astris-scientia.org/database/cast/neelix3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/neelix2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/neelix2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/neelix1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/neelix1-t.jpg" align="right" width="160" height="180"></a>Species:
+</span> male Talaxian<span class="highlight"><br>
+Rank:</span> none<span class="highlight"><br>
+Place of origin:</span> Rinax, a moon of Talax<br>
+            <span class="highlight">Siblings:</span> several, among them his sister Alixia (all deceased)<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by Ethan Phillips</i></p>
+
+        <p>&nbsp;</p>
+        <h2><a name="kes"></a>Kes</h2>
+
+        <p><span class="highlight">
+<a href="http://www.ex-astris-scientia.org/database/cast/kes3.jpg">
+<img border="0" src="http://www.ex-astris-scientia.org/database/cast/kes3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/kes2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kes2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/kes1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/kes1-t.jpg" align="right" width="160" height="180"></a>Species:
+</span> female Ocampa<span class="highlight"><br>
+Rank:</span> none<span class="highlight"><br>
+Date of birth:</span> 2370<span class="highlight"><br>
+Place of birth:</span> Ocampa<span class="highlight"><br>
+Parents:</span> Benaren (father, deceased), Martis (mother)<br>
+            <span class="highlight">
+Marital status:</span> unknown<br>
+            <i>
+Played by Jennifer Lien</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="seven"></a>Seven
+of Nine</h2>
+
+        <p><span class="highlight">
+<a href="http://www.ex-astris-scientia.org/database/cast/seven3.jpg">
+<img border="0" src="http://www.ex-astris-scientia.org/database/cast/seven3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/seven2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/seven2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/seven1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/seven1-t.jpg" align="right" width="160" height="180"></a>Species:
+</span> female human, partially de-assimilated Borg<span class="highlight"><br>
+Full name:</span> Annika Hansen (human); Seven of Nine, Tertiary Adjunct of Unimatrix Zero-One (Borg)<span class="highlight"><br>
+Rank:</span> none<span class="highlight"><br>
+Date of birth:</span> 2348, stardate 25479<span class="highlight"><br>
+Place of birth:</span> Tendara Colony<span class="highlight"><br>
+Parents:</span> Magnus and Erin Hansen (assimilated)<br>
+            <span class="highlight">
+Marital status:</span> single<br>
+            <i>
+Played by Jeri Ryan</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="archer"></a>Jonathan Archer</h2>
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/archer3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/archer3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/archer2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/archer2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/archer1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/archer1-t.jpg" align="right" width="160" height="180"></a>Species:</span>            male human<span class="highlight"><br>
+Rank:</span> Captain<span class="highlight"><br>
+Serial number:</span> SA-022-9237-CY<br>
+            <span class="highlight">Date of birth:</span> 2112<span class="highlight"><br>
+Place of origin:</span> Upstate New York, North America, Earth<span class="highlight"><br>
+Parents:</span> Henry and Sally Archer<span class="highlight"><br>
+Marital status:</span> single<br>
+            <i>
+Played by Scott Bakula</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="tpol"></a>T'Pol</h2>
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/tpol3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tpol3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/tpol2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tpol2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/tpol1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tpol1-t.jpg" align="right" width="160" height="180"></a>Species:</span>            female Vulcan<span class="highlight"><br>
+  Rank:</span> Commander<br>
+            <span class="highlight">Date of birth:</span> 2088<span class="highlight"><br>
+Place of origin:</span> Vulcan<span class="highlight"><br>
+  Mother:</span> T'Les, deceased<br>
+            <span class="highlight">Great-grandmother:</span> T'Mir<br>
+            <span class="highlight">Daughter:</span> Elizabeth (binary clone with Trip Tucker, deceased)<span class="highlight"><br>
+Marital status:</span> divorced from Koss<br>
+            <i>
+Played by Jolene Blalock </i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="tucker"></a>Trip
+Tucker</h2>
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/tucker3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tucker3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/tucker2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tucker2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/tucker1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/tucker1-t.jpg" align="right" width="160" height="180"></a>Species:</span>            male human<span class="highlight"><br>
+Full name:</span> Charles Tucker III<span class="highlight"><br>
+Rank:</span> Commander<br>
+            <span class="highlight">Date of birth:</span> 2121<span class="highlight"><br>
+Father:</span> Charles Tucker II<span class="highlight"><br>
+  Grandfather:</span> Charles Tucker I<br>
+            <span class="highlight">Sister:</span> Elizabeth (deceased)<br>
+            <span class="highlight">Daughter:</span> Elizabeth (binary clone with T'Pol, deceased)<br>
+            <span class="highlight">Clone:</span> Sim (deceased)<span class="highlight"><br>
+Marital status:</span> single<br>
+            <i>
+Played by Connor Trinneer</i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="phlox"></a>Phlox</h2>
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/phlox3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/phlox3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/phlox2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/phlox2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/phlox1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/phlox1-t.jpg" align="right" width="160" height="180"></a>Species:</span>            male Denobulan<span class="highlight"><br>
+Full name:</span> Dr. Phlox<span class="highlight"><br>
+Rank:</span> none<br>
+            <span class="highlight">Date of birth:</span> 2070<span class="highlight"><br>
+Place of origin:</span> Denobula<span class="highlight"><br>
+Children:</span> 5<span class="highlight"><br>
+Marital status:</span> married<br>
+            <span class="highlight">Spouses:</span> 3, including Feezal&nbsp;<br>
+            <i>
+Played by John Billingsley </i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="sato"></a>Hoshi Sato</h2>
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/sato3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sato3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/sato2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sato2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/sato1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/sato1-t.jpg" align="right" width="160" height="180"></a>Species:</span>            female human<span class="highlight"><br>
+  Rank:</span> Ensign<span class="highlight"><br>
+  Serial number:</span> SA-037-0198-CL<br>
+            <span class="highlight">Date of birth:</span> July 9, 2129<span class="highlight"><br>
+Place of origin:</span> Kyoto, Japan, Earth<span class="highlight"><br>
+  Grandfather:</span> Michiko Sato<span class="highlight"><br>
+Marital status:</span> single<br>
+            <i>
+Played by Linda Park </i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="reed"></a>Malcolm
+Reed</h2>
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/reed3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/reed3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/reed2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/reed2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/reed1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/reed1-t.jpg" align="right" width="160" height="180"></a>Species:</span>            male human<span class="highlight"><br>
+Rank:</span> Lieutenant<br>
+            <span class="highlight">Date of birth:</span> September 2<span class="highlight"><br>
+Parents:</span> Stuart and Mary Reed<br>
+            <span class="highlight">Sister:</span> Madeline Reed<span class="highlight"><br>
+Marital status:</span> single<br>
+            <i>
+Played by Dominic Keating </i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="mayweather"></a>Travis
+Mayweather</h2>
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/mayweather3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/mayweather3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/mayweather2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/mayweather2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/mayweather1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/mayweather1-t.jpg" align="right" width="160" height="180"></a>Species:</span>            male human<span class="highlight"><br>
+Rank:</span> Ensign<br>
+            <span class="highlight">Date of birth:</span> 2126<span class="highlight"><br>
+Mother:</span> Rianna Mayweather<br>
+            <span class="highlight">Siblings:</span> Paul Mayweather, also 1 sister<span class="highlight"><br>
+Marital status:</span> single<br>
+            <i>
+Played by Anthony Montgomery </i></p>
+
+        <p>&nbsp;</p>
+
+        <h2><a name="porthos"></a>Porthos</h2>
+        <p><span class="highlight"><a href="http://www.ex-astris-scientia.org/database/cast/porthos3.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/porthos3-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/porthos2.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/porthos2-t.jpg" align="right" width="160" height="180"></a><a href="http://www.ex-astris-scientia.org/database/cast/porthos1.jpg"><img border="0" src="http://www.ex-astris-scientia.org/database/cast/porthos1-t.jpg" align="right" width="160" height="180"></a>Species:</span>            male dog (canis lupus familiaris)<span class="highlight"><br>
+Breed:</span> Beagle
+            <span class="highlight"><br>
+Rank:</span> none
+            <br>
+            <i>
+Played by Prada, Breezy and Windy</i></p>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</body>
+
+
+
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</html>
