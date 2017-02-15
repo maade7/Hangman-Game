@@ -38,7 +38,8 @@
  }
 
  .padTop {
-     margin-top: .2rem;
+     position: relative;
+     top: .2rem;
  }
 
  .padLeft {
