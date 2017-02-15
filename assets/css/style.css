@@ -25,6 +25,12 @@ html, body {
     color: #99c;
 }
 
+input[type=text] {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
 #characters {
     position: relative;
     height: 50rem;
@@ -37,7 +43,7 @@ h2 {
 }
 
 .padTop {
-    margin-top: .4rem;
+    margin-top: .3rem;
 }
 
 .padLeft {
