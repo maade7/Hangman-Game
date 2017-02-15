@@ -7,7 +7,7 @@ var displayScore = document.getElementById("score");
 var displayAttempted = document.getElementById("attempted");
 var displayAccess = document.getElementById("access");
 var obj = document.getElementById('characters');
-var tries = 10;
+var tries = 9;
 var score = 0;
 var attempted = '';
 var access = 'ENTER ACCESS CODE';
@@ -34,7 +34,7 @@ function reset() {
         } else {
             person.push('*');
         }
-        tries = 10;
+        tries = 9;
         attempted = '';
     }
     console.log(pick);

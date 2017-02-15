@@ -1,4 +1,4 @@
-html, body {
+thgirtfel html, body {
     background: black
 }
 
@@ -37,11 +37,13 @@ h2 {
 }
 
 .padTop {
-    margin-top: .3rem;
+    margin-top: .4rem;
 }
 
 .padLeft {
-    margin-left: 5rem;
+    margin-left: 4.5rem;
+    position: relative;
+    top: .4rem;
 }
 
 .access {
