@@ -1,79 +1,80 @@
-thgirtfel html, body {
-    background: black
-}
+ html, body {
+     background: black;
+     font-family: 'Open Sans Condensed', sans-serif;
+ }
 
-.highlight {
-    color: #f90;
-}
+ .highlight {
+     color: #f90;
+ }
 
-.floatLeft {
-    float: left;
-}
+ .floatLeft {
+     float: left;
+ }
 
-.floatRight {
-    float: right;
-}
+ .floatRight {
+     float: right;
+ }
 
-.crop {
-    overflow: hidden;
-}
+ .crop {
+     overflow: hidden;
+ }
 
-.character {
-    height: 50rem;
-    overflow: hidden;
-    font-size: 2rem;
-    color: #99c;
-}
+ .character {
+     height: 50rem;
+     overflow: hidden;
+     font-size: 2rem;
+     color: #99c;
+ }
 
-#characters {
-    position: relative;
-    height: 50rem;
-    top: -2200rem;
-}
+ #characters {
+     position: relative;
+     height: 50rem;
+     top: -2200rem;
+ }
 
-h2 {
-    margin-bottom: .5rem;
-    color: white;
-}
+ h2 {
+     margin-bottom: .5rem;
+     color: white;
+ }
 
-.padTop {
-    margin-top: .4rem;
-}
+ .padTop {
+     margin-top: .4rem;
+ }
 
-.padLeft {
-    margin-left: 4.5rem;
-    position: relative;
-    top: .4rem;
-}
+ .padLeft {
+     margin-left: 4.5rem;
+     position: relative;
+     top: .4rem;
+ }
 
-.access {
-    width: inherit;
-}
+ .access {
+     width: inherit;
+ }
 
-i {
-    color: #c9c;
-}
+ i {
+     color: #c9c;
+ }
 
-.animT {
-    width: auto;
-    height: 320px!important;
-    background-image: url(../images/mapbuttons.gif);
-}
+ .animT {
+     width: auto;
+     height: 320px!important;
+     background-image: url(../images/mapbuttons.gif);
+ }
 
-.anim {
-    width: auto;
-    background-image: url(../images/mapbuttons.gif);
-}
+ .anim {
+     width: auto;
+     background-image: url(../images/mapbuttons.gif);
+ }
 
-.animM {
-    width: auto;
-    height: 150px!important;
-    background-image: url(../images/mapbuttons.gif);
-}
+ .animM {
+     width: auto;
+     height: 150px!important;
+     background-image: url(../images/mapbuttons.gif);
+ }
 
-.pic {
-    margin: .3rem 1rem 0 0;
-    width: 160px;
-    float: left;
-    border: .2rem solid #c66;
-}
+ .pic {
+     margin: .3rem 1rem 0 0;
+     width: 160px;
+     float: left;
+     border: .2rem solid #c66;
+ }

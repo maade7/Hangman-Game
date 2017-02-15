@@ -12,7 +12,7 @@ var score = 0;
 var attempted = '';
 var access = 'ENTER ACCESS CODE';
 var denied = new Audio('./assets/audio/002.wav');
-var accepted = new Audio('./assets/audio/securityauthorisationaccepted_clean.mp3');
+var accepted = new Audio('./assets/audio/commandcodesverified_ep.mp3');
 var command = new Audio('./assets/audio/pleaseinputcommandcodes_ep.mp3');
 var correct = new Audio('./assets/audio/keyok2.mp3');
 var incorect = new Audio('./assets/audio/denybeep1.mp3');
@@ -53,7 +53,7 @@ document.onkeyup = function(event) {
             if (pick[i].toLowerCase() === event.key.toLowerCase()) {
                 person[i] = pick[i];
                 score++;
-                correct.play();
+                //    correct.play();
             }
         }
     }
