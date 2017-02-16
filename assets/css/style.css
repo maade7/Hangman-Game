@@ -104,3 +104,24 @@
      float: left;
      border: .2rem solid #c66;
  }
+ /* @group Blink */
+
+ .blink {
+     animation: blink 1s linear infinite;
+ }
+
+ @keyframes blink {
+     0% {
+         opacity: 1;
+     }
+     50% {
+         opacity: .7;
+     }
+     50.01% {
+         opacity: .8;
+     }
+     100% {
+         opacity: .9;
+     }
+ }
+ /* @end */
