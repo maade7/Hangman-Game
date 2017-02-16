@@ -41,8 +41,12 @@ function reset() {
     wright();
 }
 
+
+
+
 //user guesses
-document.onkeyup = function(event) {
+//document.onkeyup = function(event) {
+$(document).on("keyup", function(event) {
     if (pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || attempted.toLowerCase().indexOf(event.key.toLowerCase()) !== -1) {
         //wrong key
         tries = tries - 1;
@@ -59,7 +63,7 @@ document.onkeyup = function(event) {
     }
     attempted = attempted + ' ' + (event.key);
     wright();
-}
+});
 
 function move(y) {
     obj.style.position = 'relative';
