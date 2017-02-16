@@ -46,7 +46,7 @@ function reset() {
 
 //user guesses
 //document.onkeyup = function(event) {
-$(document).on("keyup", function(event) {
+$(document).on("input", function(event) {
     if (pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || attempted.toLowerCase().indexOf(event.key.toLowerCase()) !== -1) {
         //wrong key
         tries = tries - 1;
