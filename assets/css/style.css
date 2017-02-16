@@ -3,6 +3,24 @@
      font-family: 'Open Sans Condensed', sans-serif;
  }
 
+ textarea {
+     width: 100%;
+     height: 100%;
+     ​
+ }
+
+ .mobileText {
+     background-color: #e8e8e8;
+     width: 100%;
+     height: auto;
+     bottom: 0px;
+     top: 0px;
+     left: 0;
+     position: absolute;
+     z-index: 300;
+     visibility: hidden;
+ }
+
  .highlight {
      color: #f90;
  }
@@ -35,6 +53,11 @@
  h2 {
      margin-bottom: .5rem;
      color: white;
+ }
+
+ .padBottom {
+     position: relative;
+     bottom: .2rem;
  }
 
  .padTop {
