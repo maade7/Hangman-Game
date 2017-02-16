@@ -42,13 +42,9 @@ function reset() {
 }
 
 
-$('#mobile').keypress(keyPress);
-
-
 
 //user guesses
-//document.onkeyup = function(event) {
-function keyPress(event) {
+document.onkeyup = function(event) {
     if (pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || attempted.toLowerCase().indexOf(event.key.toLowerCase()) !== -1) {
         //wrong key
         tries = tries - 1;
