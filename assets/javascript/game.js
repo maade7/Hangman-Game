@@ -42,7 +42,7 @@ function reset() {
 }
 
 
-$(document).keypress(keyPress);
+$('#mobile').keypress(keyPress);
 
 
 
