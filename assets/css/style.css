@@ -18,7 +18,8 @@
      left: 0;
      position: absolute;
      z-index: 300;
-     visibility: hidden;
+     display: none;
+     ;
  }
 
  .highlight {
