@@ -39,7 +39,7 @@ var game = {
     move: function(y) {
         game.obj.style.position = 'relative';
         game.obj.style.webkitTransitionDuration = "1s";
-        game.obj.style.top = ((y * -50) + 'rem');
+        game.obj.style.top = ((y * -60) + 'rem');
     },
 
 
@@ -92,7 +92,7 @@ var game = {
         }
     },
 }
-
+game.obj.style.top = ((game.names.length * -60) + 'rem');
 game.displayAccess.style.color = '#f90';
 console.log(game.names);
 game.reset();

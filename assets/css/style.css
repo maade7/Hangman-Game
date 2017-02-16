@@ -39,7 +39,7 @@
  }
 
  .character {
-     height: 50rem;
+     height: 60rem;
      overflow: hidden;
      font-size: 2rem;
      color: #99c;
@@ -47,8 +47,8 @@
 
  #characters {
      position: relative;
-     height: 50rem;
-     top: -2200rem;
+     height: 60rem;
+     /*top: -2200rem;*/
      line-height: 1.3;
  }
 
@@ -75,6 +75,7 @@
 
  .access {
      width: inherit;
+     max-width: 100rem;
  }
 
  i {
