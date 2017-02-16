@@ -92,17 +92,11 @@
      background-image: url(../images/mapbuttons.gif);
  }
 
- .animM {
-     width: auto;
-     height: 150px!important;
-     background-image: url(../images/mapbuttons.gif);
- }
-
  .pic {
      margin: .3rem 1rem 0 0;
      width: 160px;
      float: left;
-     border: .2rem solid #c66;
+     border: .5rem solid #c66;
  }
  /* @group Blink */
 
