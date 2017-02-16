@@ -64,32 +64,33 @@ var game = {
         game.displayScore.innerHTML = game.score;
         game.displayAttempted.innerHTML = game.attempted;
         game.displayAccess.innerHTML = game.access;
-    }
-}
-//user guesses
-document.onkeyup = function(event) {
-    if (game.pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || game.attempted.toLowerCase().indexOf(event.key.toLowerCase()) !== -1) {
-        //wrong key
-        game.tries = game.tries - 1;
-        game.incorect.play();
-    } else {
-        //right key
-        for (var i = 0; i < game.pick.length; i++) {
-            if (game.pick[i].toLowerCase() === event.key.toLowerCase()) {
-                game.person[i] = game.pick[i];
-                game.score++;
-                //    correct.play();
+    },
+
+    //user guesses
+    'userInput': document.onkeyup = function(event) {
+        if (game.pick.toLowerCase().indexOf(event.key.toLowerCase()) === -1 || game.attempted.toLowerCase().indexOf(event.key.toLowerCase()) !== -1) {
+            //wrong key
+            game.tries = game.tries - 1;
+            game.incorect.play();
+        } else {
+            //right key
+            for (var i = 0; i < game.pick.length; i++) {
+                if (game.pick[i].toLowerCase() === event.key.toLowerCase()) {
+                    game.person[i] = game.pick[i];
+                    game.score++;
+                    //    correct.play();
+                }
             }
         }
-    }
-    game.attempted = game.attempted + ' ' + (event.key);
-    game.wright();
-}
+        game.attempted = game.attempted + ' ' + (event.key);
+        game.wright();
+    },
 
-document.onkeydown = function(e) {
-    if (e.keyCode == 32 && e.target == document.body) {
-        e.preventDefault();
-    }
+    'scrollKiller': document.onkeydown = function(e) {
+        if (e.keyCode == 32 && e.target == document.body) {
+            e.preventDefault();
+        }
+    },
 }
 
 game.displayAccess.style.color = '#f90';
